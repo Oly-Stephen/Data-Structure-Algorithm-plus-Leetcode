@@ -1,23 +1,21 @@
 public class Practice {
+    public static int removeDuplicates(int[] nums) {
 
-    static int linearSearch(int[] arr, int target, int start, int end) {
-        if (arr.length == 0) {
-            return -1;
-        }
-
-        int ans = arr[0];
-        for (int i = start; i < end; i++) {
-            int element = arr[i];
-            if (element == target){
-                return i;
+        int start=1;
+        int end=1;
+        while(end<nums.length){
+            if(nums[end] != nums[end-1]){
+                nums[start] = nums[end];
+                start++;
             }
+            end++;
         }
-        return -1;
+        return start;
     }
 
     public static void main(String[] args) {
-        int[] arr = {23, 45, 1, 2, 8, 19};
-        int target = 45;
-        System.out.println(linearSearch(arr, target, 0, 4));
+        int[] nums = {1, 1, 2, 3, 3, 4};
+        int k = removeDuplicates(nums);
+        System.out.println(k);
     }
 }
