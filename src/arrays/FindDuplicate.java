@@ -1,7 +1,9 @@
+package arrays;
+
 import java.util.HashSet;
 import java.util.Set;
 
-public class Practice {
+public class FindDuplicate{
     public static int findDuplicate(int[] nums) {
         Set<Integer> seen = new HashSet<>();
         for (int num : nums) {
